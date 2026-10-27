@@ -11,6 +11,7 @@ a{color:#d4fafa}header,.shell,footer{max-width:1250px;margin:0 auto;padding:22px
 .overlay{position:absolute;inset:0;background:#071d34ec;z-index:14;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;padding:30px}.overlay h2{font-size:clamp(24px,4vw,40px);margin:4px}.overlay p{max-width:500px;color:#c5d8e6}.overlay .results{display:grid;grid-template-columns:repeat(3,1fr);width:min(500px,100%);gap:8px;margin:12px 0 24px}.overlay .results strong{font-size:28px;display:block;color:#ffe2ad}.overlay .results span{font-size:13px;color:#bcd2e2}.overlay .actions{display:flex;gap:10px;flex-wrap:wrap;justify-content:center}
 .pill{font-size:11px;text-transform:uppercase;letter-spacing:.09em;font-weight:900;color:#b0f3d5}.foot{font-size:13px;color:#acbfd4;text-align:center}.hidden{display:none!important}dialog{background:#112c47;color:white;border:1px solid #658598;border-radius:18px;padding:25px;max-width:500px}dialog::backdrop{background:#021425bb}dialog h2{margin-top:0}@media(max-width:850px){.level-grid{grid-template-columns:repeat(2,1fr)}.play-layout{grid-template-columns:1fr}.bear-list{display:grid;grid-template-columns:repeat(2,minmax(0,1fr))}.hero{grid-template-columns:1fr}.hero-art{display:none}.stats-rail{grid-template-columns:repeat(3,minmax(0,1fr))}.arena{height:410px}}@media(max-width:520px){header,.shell,footer{padding:14px}.level-grid{grid-template-columns:1fr}.type-zone{display:block}.type-zone label{display:block;margin-bottom:5px}.stats-rail{grid-template-columns:repeat(2,minmax(0,1fr))}.arena{height:360px}.hero{padding:18px}.bear-list{grid-template-columns:repeat(2,1fr)}}
 
+
 /* V4 — centered portrait playfield, illustrated wings and keyboard-focused fullscreen */
 .play-layout{grid-template-columns:minmax(0,1fr) 242px}
 .stage-frame{display:flex;align-items:stretch;gap:10px;justify-content:center;overflow:hidden;border-radius:18px;background:#0b263d;position:relative}
@@ -56,16 +57,19 @@ a{color:#d4fafa}header,.shell,footer{max-width:1250px;margin:0 auto;padding:22px
 @media(max-width:620px){.scene-side{flex:0 0 0;display:none}.stage-frame{background:transparent}.stage-frame .arena{flex:1 1 100%;width:100%;height:clamp(520px,76vh,730px)}.battle:fullscreen .stage-frame .arena{width:100%;flex:1}.game-setup{align-items:flex-start}}
 @media(max-height:650px){.battle:fullscreen .stage-frame .arena{height:100%}.battle:fullscreen .type-zone{padding:6px}.battle:fullscreen .game-bar{padding-bottom:4px}}
 @media(prefers-reduced-motion:reduce){.arcade-ship,.river .arena:after,.space .arena:before{animation:none}}
+
+/* V5 mission flow, cosmetics and hit effects */
+.mission-entry{display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:16px;padding:22px 26px;margin:18px 0}.mission-entry h2{margin:5px 0}.mission-entry p{margin:0;color:var(--muted)}.mission-start{background:#fbc878;color:#17253a;border:0;border-radius:13px;padding:17px 25px;font-weight:900;font-size:19px;cursor:pointer;box-shadow:0 5px 24px #ffd77b33}.mission-start:hover{filter:brightness(1.12)}.mission-track{display:flex;flex-wrap:wrap;gap:5px;margin-top:14px}.mission-track span{border:1px solid #53738b;border-radius:7px;min-width:30px;padding:4px 7px;text-align:center;font-size:12px;color:#c9d9e6}.mission-track span.done{background:#245d53;color:#d6fff6}.mission-track span.current{background:#e6b464;color:#0c2131;font-weight:900}.customize{padding:15px 20px;margin-bottom:12px}.customize-grid{display:grid;grid-template-columns:repeat(4,minmax(120px,1fr));gap:12px;margin:8px 0}.customize-grid label{display:flex;flex-direction:column;font-size:13px;font-weight:700;gap:5px}.customize-grid select{width:100%;background:#163b59;color:#fff;border:1px solid #739bb6;border-radius:9px;padding:9px}.customize small{color:#c1d4e6}.explosion{position:absolute;z-index:15;pointer-events:none;width:90px;height:90px;transform:translate(-50%,-50%);border-radius:50%;animation:boom .5s ease-out forwards;background:radial-gradient(circle,#fff 0 8%,#fff9ad 9% 17%,#ffbc53 18% 33%,#fc6a4a66 34% 52%,transparent 64%);box-shadow:0 0 25px #ffc55baa}.explosion:after{content:'✦ ✧ ✦ ✧';position:absolute;inset:-12px;display:grid;place-items:center;color:#fff5a8;font-size:23px;letter-spacing:5px;animation:boomParticles .5s ease-out forwards}@keyframes boom{0%{opacity:1;scale:.3}55%{opacity:1;scale:1.5}100%{opacity:0;scale:2}}@keyframes boomParticles{to{transform:rotate(60deg) scale(1.9);opacity:0}}.space .arcade-ship[data-ship="interceptor"]{filter:drop-shadow(0 0 12px #ffb35b) hue-rotate(155deg);transform:scale(1.08)}.space .arcade-ship[data-ship="guardian"]{filter:drop-shadow(0 0 14px #ca91ff) hue-rotate(75deg);transform:scale(1.13)}@media(max-width:750px){.customize-grid{grid-template-columns:repeat(2,minmax(0,1fr))}.mission-entry{align-items:stretch}.mission-start{width:100%}}@media(max-width:440px){.customize-grid{grid-template-columns:1fr}}
 </style></head>
 <body class="space"><header><div><div class="eyebrow">Naches Learning Hub · Typing Arcade</div><h1>Space Type Defender</h1><p>Type the threats. Defend the station. Master the galaxy.</p></div><div class="mark" aria-hidden="true">🚀</div></header>
 <main class="shell"><section class="hero card"><div><div class="eyebrow">A new way to practice keyboarding</div><h2>A new galaxy. A new wave. Another word mastered.</h2><p>Begin with familiar words and unlock science, nature, and place words on later missions. Practice with vocabulary selected for your grade band, and watch each level grow in difficulty.</p><div class="switch"><label for="gradeSelect"><b>My grade</b></label><select id="gradeSelect" aria-label="Grade level"></select><span class="hint">Grades 1–12 · Teacher-curated practice lists</span></div></div><div class="hero-art" aria-hidden="true">🚀 <span aria-hidden="true">☄️ ✨</span></div></section>
-<section class="section-title"><div><h2>Choose a mission</h2><p>More targets, higher speeds, and more vocabulary categories at later levels.</p></div><button type="button" class="small-btn" id="help">How to play</button></section><section class="level-grid" id="levelGrid" aria-label="Choose level"></section>
+<section class="mission-entry card" id="missionEntry"><div><div class="eyebrow">Your next mission</div><h2 id="entryTitle">Level 1 · First Contact</h2><p id="entryDescription">Begin with Level 1 and unlock each of the twelve missions in order.</p><div class="mission-track" id="missionTrack" aria-label="Mission progress"></div></div><button type="button" id="startMission" class="mission-start">▶ Start Level 1</button><button class="small-btn" type="button" id="help">How to play</button></section><section id="levelGrid" hidden></section>
 <section class="game-setup card"><label for="modeSelect">Game mode</label><select id="modeSelect" aria-label="Choose game mode"><option value="arcade">Arcade · 3 lives</option><option value="relaxed">Relaxed · endless practice</option></select><small>Arcade: clear each level before three misses. Relaxed: type as long as you like, then choose Finish Run.</small></section><section class="section-title"><div><h2>Your arcade</h2><p>Progress is saved in this browser only.</p></div></section>
-<div class="stats-rail"><div class="stat"><span>Level</span><strong id="levelNow">1 / 6</strong></div><div class="stat"><span>Points</span><strong id="score">0</strong></div><div class="stat"><span>Targets destroyed</span><strong id="collected">0 / 0</strong></div><div class="stat"><span>Station hits</span><strong id="missed">0</strong></div><div class="stat"><span>Accuracy · WPM</span><strong><span id="accuracy">100%</span> · <span id="wpm">0</span></strong></div></div>
-<div class="play-layout"><section class="battle card" id="battle"><div class="game-bar"><h2 id="riverNumber">Choose a level above</h2><div class="buttonbar"><button class="small-btn" id="pause" type="button">Pause</button><button class="small-btn" id="restart" type="button">Restart</button><button class="small-btn" id="back" type="button">Levels</button><button class="small-btn" id="finishRun" type="button" hidden>Finish Run</button><button class="small-btn" id="fullscreen" type="button" aria-label="Toggle fullscreen">Fullscreen ⛶</button></div></div>
+<section class="customize card"><div class="eyebrow">Customize your defender</div><div class="customize-grid"><label>Ship style <select id="shipSelect"><option value="scout">Scout · Starter</option><option value="interceptor">Interceptor · Unlock Level 4</option><option value="guardian">Guardian · Unlock Level 8</option></select></label><label>Laser color <select id="laserSelect"><option value="cyan">Cyan</option><option value="red">Red</option><option value="green">Green</option><option value="purple">Purple</option><option value="gold">Gold</option><option value="rainbow">Rainbow · Unlock Level 12</option></select></label><label>Music <select id="musicSelect"><option value="on">On</option><option value="off">Off</option></select></label><label>Effects <select id="effectsSelect"><option value="on">On</option><option value="off">Off</option></select></label></div><small>Sound begins after you press Start. Customize your ship and lasers without affecting your typing score.</small></section><div class="stats-rail"><div class="stat"><span>Level</span><strong id="levelNow">1 / 6</strong></div><div class="stat"><span>Points</span><strong id="score">0</strong></div><div class="stat"><span>Targets destroyed</span><strong id="collected">0 / 0</strong></div><div class="stat"><span>Station hits</span><strong id="missed">0</strong></div><div class="stat"><span>Accuracy · WPM</span><strong><span id="accuracy">100%</span> · <span id="wpm">0</span></strong></div></div>
+<div class="play-layout"><section class="battle card" id="battle"><div class="game-bar"><h2 id="riverNumber">Press Start Mission above</h2><div class="buttonbar"><button class="small-btn" id="pause" type="button">Pause</button><button class="small-btn" id="restart" type="button">Restart</button><button class="small-btn" id="back" type="button">Mission menu</button><button class="small-btn" id="finishRun" type="button" hidden>Finish Run</button><button class="small-btn" id="fullscreen" type="button" aria-label="Toggle fullscreen">Fullscreen ⛶</button></div></div>
 <div class="stage-frame" id="stageFrame"><div class="scene-side scene-left"><svg viewBox="0 0 180 700" preserveAspectRatio="xMidYMid slice" aria-hidden="true"><defs><radialGradient id="neb"><stop stop-color="#5c439c"/><stop offset="1" stop-color="#0a1739"/></radialGradient><radialGradient id="planet"><stop stop-color="#76c3ee"/><stop offset="1" stop-color="#2a377b"/></radialGradient></defs><rect width="180" height="700" fill="url(#neb)"/><g fill="#bbecff"><circle cx="19" cy="52" r="2"/><circle cx="98" cy="46" r="2"/><circle cx="154" cy="121" r="3"/><circle cx="25" cy="204" r="2"/><circle cx="102" cy="278" r="2"/><circle cx="148" cy="350" r="2"/><circle cx="29" cy="436" r="2"/><circle cx="121" cy="532" r="3"/><circle cx="63" cy="643" r="2"/><circle cx="155" cy="679" r="2"/></g><circle cx="123" cy="199" r="78" fill="url(#planet)" stroke="#b3ceff" stroke-width="2"/><path d="M60 180q45 42 123-8M56 225q67 21 142-25" fill="none" stroke="#d6f0ff" opacity=".3" stroke-width="9"/><ellipse cx="88" cy="457" rx="115" ry="28" transform="rotate(-20 88 457)" fill="none" stroke="#97aaf0" stroke-width="8" opacity=".8"/><circle cx="80" cy="454" r="47" fill="#b37fb3"/><path d="M0 680q42-68 99-72t81 20v72H0" fill="#26355f"/><path d="M0 700v-27l34-22 18 25 30-38 36 24 34-49 28 34v53" fill="#5063a4" opacity=".85"/></svg></div><div class="arena" id="arena"><div id="objects"></div><div class="bank"><span class="arcade-ship" aria-label="Defender spacecraft"><svg viewBox="0 0 138 104" role="img" aria-label="Arcade defender spacecraft"><defs><linearGradient id="hull" x2="0" y2="1"><stop stop-color="#9eefff"/><stop offset="1" stop-color="#3a64c9"/></linearGradient></defs><path d="M66 6 83 40l27 10 20 31-44-7-17 23-17-23-44 7 20-31 27-10Z" fill="url(#hull)" stroke="#d1fbff" stroke-width="4"/><path d="M69 13 81 64H57Z" fill="#133b8d" stroke="#9eeeff" stroke-width="2"/><ellipse cx="69" cy="47" rx="10" ry="17" fill="#55fcff"/><path d="M48 74 53 100 66 75M90 74 85 100 72 75" fill="#f6a2f9" opacity=".95"/><circle cx="15" cy="74" r="5" fill="#7fe8ff"/><circle cx="123" cy="74" r="5" fill="#7fe8ff"/></svg></span><span>Type to fire lasers. Finish each word to destroy the meteor.</span></div>
-<div class="overlay" id="startScreen"><div class="eyebrow">Ready, typist?</div><h2>Mission control is ready</h2><p>Choose your grade and level above. You can replay any level to improve your score.</p><span class="pill">No account · No ads · Keyboard friendly</span></div>
-<div class="overlay" id="endScreen" hidden><div class="eyebrow">Round complete</div><h2 id="endTitle">Great work!</h2><p id="endDescription"></p><div class="results"><div><strong id="finalScore">0</strong><span>Points</span></div><div><strong id="finalAcc">100%</strong><span>Accuracy</span></div><div><strong id="finalWpm">0</strong><span>Net WPM</span></div></div><div class="actions"><button class="action-btn" type="button" id="retry">Try again</button><button class="action-btn" type="button" id="nextLevel">Next level →</button><button class="small-btn" type="button" id="homeEnd">Level list</button></div></div></div><div class="scene-side scene-right"><svg viewBox="0 0 180 700" preserveAspectRatio="xMidYMid slice" aria-hidden="true"><defs><radialGradient id="neb"><stop stop-color="#5c439c"/><stop offset="1" stop-color="#0a1739"/></radialGradient><radialGradient id="planet"><stop stop-color="#76c3ee"/><stop offset="1" stop-color="#2a377b"/></radialGradient></defs><rect width="180" height="700" fill="url(#neb)"/><g fill="#bbecff"><circle cx="19" cy="52" r="2"/><circle cx="98" cy="46" r="2"/><circle cx="154" cy="121" r="3"/><circle cx="25" cy="204" r="2"/><circle cx="102" cy="278" r="2"/><circle cx="148" cy="350" r="2"/><circle cx="29" cy="436" r="2"/><circle cx="121" cy="532" r="3"/><circle cx="63" cy="643" r="2"/><circle cx="155" cy="679" r="2"/></g><circle cx="123" cy="199" r="78" fill="url(#planet)" stroke="#b3ceff" stroke-width="2"/><path d="M60 180q45 42 123-8M56 225q67 21 142-25" fill="none" stroke="#d6f0ff" opacity=".3" stroke-width="9"/><ellipse cx="88" cy="457" rx="115" ry="28" transform="rotate(-20 88 457)" fill="none" stroke="#97aaf0" stroke-width="8" opacity=".8"/><circle cx="80" cy="454" r="47" fill="#b37fb3"/><path d="M0 680q42-68 99-72t81 20v72H0" fill="#26355f"/><path d="M0 700v-27l34-22 18 25 30-38 36 24 34-49 28 34v53" fill="#5063a4" opacity=".85"/></svg></div></div>
+<div class="overlay" id="startScreen"><div class="eyebrow">Ready, typist?</div><h2>Mission control is ready</h2><p>Choose your grade and press Start Mission. Complete missions in order to unlock all twelve levels.</p><span class="pill">No account · No ads · Keyboard friendly</span></div>
+<div class="overlay" id="endScreen" hidden><div class="eyebrow">Round complete</div><h2 id="endTitle">Great work!</h2><p id="endDescription"></p><div class="results"><div><strong id="finalScore">0</strong><span>Points</span></div><div><strong id="finalAcc">100%</strong><span>Accuracy</span></div><div><strong id="finalWpm">0</strong><span>Net WPM</span></div></div><div class="actions"><button class="action-btn" type="button" id="retry">Try again</button><button class="action-btn" type="button" id="nextLevel">Next level →</button><button class="small-btn" type="button" id="homeEnd">Mission menu</button></div></div></div><div class="scene-side scene-right"><svg viewBox="0 0 180 700" preserveAspectRatio="xMidYMid slice" aria-hidden="true"><defs><radialGradient id="neb"><stop stop-color="#5c439c"/><stop offset="1" stop-color="#0a1739"/></radialGradient><radialGradient id="planet"><stop stop-color="#76c3ee"/><stop offset="1" stop-color="#2a377b"/></radialGradient></defs><rect width="180" height="700" fill="url(#neb)"/><g fill="#bbecff"><circle cx="19" cy="52" r="2"/><circle cx="98" cy="46" r="2"/><circle cx="154" cy="121" r="3"/><circle cx="25" cy="204" r="2"/><circle cx="102" cy="278" r="2"/><circle cx="148" cy="350" r="2"/><circle cx="29" cy="436" r="2"/><circle cx="121" cy="532" r="3"/><circle cx="63" cy="643" r="2"/><circle cx="155" cy="679" r="2"/></g><circle cx="123" cy="199" r="78" fill="url(#planet)" stroke="#b3ceff" stroke-width="2"/><path d="M60 180q45 42 123-8M56 225q67 21 142-25" fill="none" stroke="#d6f0ff" opacity=".3" stroke-width="9"/><ellipse cx="88" cy="457" rx="115" ry="28" transform="rotate(-20 88 457)" fill="none" stroke="#97aaf0" stroke-width="8" opacity=".8"/><circle cx="80" cy="454" r="47" fill="#b37fb3"/><path d="M0 680q42-68 99-72t81 20v72H0" fill="#26355f"/><path d="M0 700v-27l34-22 18 25 30-38 36 24 34-49 28 34v53" fill="#5063a4" opacity=".85"/></svg></div></div>
 <div class="type-zone"><label for="typeInput">Type here</label><input id="typeInput" aria-label="Type approaching word" type="text" autocapitalize="none" spellcheck="false" autocomplete="off" autocorrect="off" placeholder="Watch for approaching words..." maxlength="35"></div><div class="progress"><div id="progressFill"></div></div><div class="status" id="status" role="status" aria-live="polite">Choose a level to begin.</div></section>
 <aside class="sidebar card"><h3>Mission vocabulary</h3><p>Each mission introduces new categories. Type any visible word; no bear selection required.</p><div class="bear-list" id="bearCards"></div><hr style="border-color:#4d6475;margin:20px 0"><h3>Personal best</h3><p><strong id="bestScore">0</strong> high score</p><p><strong id="bestLevel">0 / 6</strong> highest cleared</p><p><strong id="totalWords">0</strong> total words defended</p><p class="hint">Scores remain on this device and browser. This prototype is not a formal spelling assessment.</p></aside></div>
 </main><footer class="foot">Original browser-based game · Space Type Defender · Sample vocabulary supports spelling and academic language practice, not an official state-issued word list.</footer>
@@ -90,12 +94,18 @@ const LEVELS=isRiver?[
  {name:'Boulder Rapids',scene:'Rocky rapids',speed:49,spawn:2750,goal:13,cats:4},
  {name:'Mountain Run',scene:'High mountain stream',speed:57,spawn:2500,goal:15,cats:4},
  {name:'Stormwater Gorge',scene:'Storm river',speed:67,spawn:2250,goal:18,cats:4}]:[
- {name:'Academy Orbit',scene:'Low orbit',speed:30,spawn:3900,goal:8,cats:1},
- {name:'Meteor Trail',scene:'Asteroid field',speed:38,spawn:3250,goal:10,cats:2},
- {name:'Nebula Passage',scene:'Nebula',speed:47,spawn:2900,goal:12,cats:3},
- {name:'Satellite Siege',scene:'Deep orbit',speed:55,spawn:2600,goal:14,cats:4},
- {name:'Comet Run',scene:'Comet storm',speed:64,spawn:2300,goal:16,cats:4},
- {name:'Final Frontier',scene:'Frontier',speed:73,spawn:2150,goal:19,cats:4}];
+ {name:'First Contact',scene:'Low orbit',speed:28,spawn:4100,goal:7,cats:1},
+ {name:'Incoming Signals',scene:'Meteor field',speed:32,spawn:3700,goal:9,cats:1},
+ {name:'Meteor Shower',scene:'Meteor shower',speed:36,spawn:3400,goal:10,cats:2},
+ {name:'Double Trouble',scene:'Deep orbit',speed:40,spawn:3150,goal:11,cats:2},
+ {name:'Asteroid Belt',scene:'Asteroid belt',speed:45,spawn:2950,goal:12,cats:3},
+ {name:'Solar Storm',scene:'Solar storm',speed:49,spawn:2800,goal:13,cats:3},
+ {name:'Alien Ambush',scene:'Alien ambush',speed:53,spawn:2650,goal:14,cats:3},
+ {name:'Dark Nebula',scene:'Nebula',speed:57,spawn:2500,goal:15,cats:4},
+ {name:'Galactic Siege',scene:'Galactic siege',speed:61,spawn:2400,goal:16,cats:4},
+ {name:'Mothership',scene:'Mothership',speed:65,spawn:2350,goal:17,cats:4},
+ {name:'Final Defense',scene:'Final defense',speed:69,spawn:2250,goal:18,cats:4},
+ {name:'Last Stand',scene:'Final frontier',speed:73,spawn:2150,goal:20,cats:4}];
 const colorMap={daily:'#ffd180',nature:'#9aefb0',world:'#ffcd8c',science:'#90d9ff'};
 const catNames={daily:'Everyday',nature:'Nature',world:'Places',science:'Science'};
 function bandFor(grade){return grade<=2?'1-2':grade<=5?'3-5':grade<=8?'6-8':grade<=10?'9-10':'11-12'}
@@ -116,289 +126,317 @@ function bearArtwork(index=0){let n=bearNames[index];let glasses=index===3?`<rec
  return `<svg viewBox="0 0 122 132" aria-hidden="true"><ellipse cx="60" cy="124" rx="42" ry="6" fill="#001c24" opacity=".17"/><ellipse cx="60" cy="87" rx="42" ry="36" fill="${n.shade}" stroke="#23353f" stroke-width="3"/><circle cx="34" cy="34" r="16" fill="${n.shade}" stroke="#23353f" stroke-width="3"/><circle cx="86" cy="34" r="16" fill="${n.shade}" stroke="#23353f" stroke-width="3"/><circle cx="60" cy="59" r="43" fill="${n.color}" stroke="#23353f" stroke-width="3"/><ellipse cx="60" cy="75" rx="24" ry="18" fill="#fff0d6"/><circle cx="48" cy="56" r="5" fill="#27333e"/><circle cx="76" cy="56" r="5" fill="#27333e"/><ellipse cx="62" cy="71" rx="7" ry="5" fill="#3e3f43"/><path d="M53 80q9 8 18 0" stroke="#513c36" stroke-width="3" fill="none" stroke-linecap="round"/>${glasses}${hat}${fish}</svg>`}
 
 
+
+
 // V4 gameplay modes and grade-level word challenges are independent of KeyQuest.
 const BEAR_BONUSES={daily:'Everyday words · +20% points',nature:'Nature words · current slows 20%',world:'Places · +30 points',science:'Science · 3 catches recover one life'};
 function configureModeUI(){
-  const mode=$('modeSelect');if(!mode)return;
-  $('finishRun').hidden=!(state&&running&&!state.ended&&state.mode==='relaxed');
-  mode.disabled=Boolean(state&&running&&!state.ended);
+ const mode=$('modeSelect');if(!mode)return;
+ $('finishRun').hidden=!(state&&running&&!state.ended&&state.mode==='relaxed');
+ mode.disabled=Boolean(state&&running&&!state.ended);
 }
 function updateMissed(){
-  if(!state)return;
-  $('missed').textContent=state.mode==='arcade'?`${state.missed} / 3`:`${state.missed} · ∞`;
+ if(!state)return;
+ $('missed').textContent=state.mode==='arcade'?`${state.missed} / 3`:`${state.missed} · ∞`;
 }
 function pulseAt(target){
-  if(isRiver||!target||!target.el||!$('arena'))return;
-  const a=$('arena'), x0=a.clientWidth/2, y0=a.clientHeight-83, x1=target.x*a.clientWidth,y1=target.y+24;
-  const dx=x1-x0,dy=y1-y0;
-  const beam=document.createElement('div');beam.className='laser-beam';
-  beam.style.cssText=`left:${x0}px;top:${y0}px;width:${Math.hypot(dx,dy)}px;transform:rotate(${Math.atan2(dy,dx)}rad)`;
-  const flash=document.createElement('div');flash.className='impact-ring';flash.style.cssText=`left:${x1}px;top:${y1}px`;
-  a.append(beam,flash);
-  beam.addEventListener('animationend',()=>beam.remove(),{once:true});
-  flash.addEventListener('animationend',()=>flash.remove(),{once:true});
+ if(isRiver||!target||!target.el||!$('arena'))return;
+ const a=$('arena'), x0=a.clientWidth/2, y0=a.clientHeight-83, x1=target.x*a.clientWidth,y1=target.y+24;
+ const dx=x1-x0,dy=y1-y0;
+ const beam=document.createElement('div');beam.className='laser-beam';
+ beam.style.cssText=`left:${x0}px;top:${y0}px;width:${Math.hypot(dx,dy)}px;transform:rotate(${Math.atan2(dy,dx)}rad);background:${laserColor()};box-shadow:0 0 9px 3px ${laserColor()},0 0 17px ${laserColor()}`;
+ const flash=document.createElement('div');flash.className='impact-ring';flash.style.cssText=`left:${x1}px;top:${y1}px`;
+ a.append(beam,flash);playSound('laser');
+ beam.addEventListener('animationend',()=>beam.remove(),{once:true});
+ flash.addEventListener('animationend',()=>flash.remove(),{once:true});
 }
 function applyCatchBonus(target,base){
-  if(!isRiver)return base;
-  if(target.cat==='daily')return Math.round(base*1.2);
-  if(target.cat==='world')return base+30;
-  if(target.cat==='science'){
-    state.scienceCatches=(state.scienceCatches||0)+1;
-    if(state.scienceCatches>=3){
-      state.scienceCatches=0;
-      if(state.mode==='arcade'&&state.missed>0){state.missed--;status('Professor recovered one missed-food allowance!');}
-    }
-  }
-  return base;
+ if(!isRiver)return base;
+ if(target.cat==='daily')return Math.round(base*1.2);
+ if(target.cat==='world')return base+30;
+ if(target.cat==='science'){
+ state.scienceCatches=(state.scienceCatches||0)+1;
+ if(state.scienceCatches>=3){
+ state.scienceCatches=0;
+ if(state.mode==='arcade'&&state.missed>0){state.missed--;status('Professor recovered one missed-food allowance!');}
+ }
+ }
+ return base;
 }
 function setFullscreenLabel(){
-  $('fullscreen').textContent=document.fullscreenElement?'Exit fullscreen':'Fullscreen ⛶';
+ $('fullscreen').textContent=document.fullscreenElement?'Exit fullscreen':'Fullscreen ⛶';
 }
 function toggleFullscreen(){
-  if(document.fullscreenElement){document.exitFullscreen?.().catch(()=>status('Could not exit fullscreen.'));return;}
-  const target=$('battle');
-  if(!target.requestFullscreen){status('Fullscreen is not supported in this browser.');return;}
-  target.requestFullscreen().then(()=>$('typeInput').focus()).catch(()=>status('Fullscreen was blocked by the browser.'));
+ if(document.fullscreenElement){document.exitFullscreen?.().catch(()=>status('Could not exit fullscreen.'));return;}
+ const target=$('battle');
+ if(!target.requestFullscreen){status('Fullscreen is not supported in this browser.');return;}
+ target.requestFullscreen().then(()=>$('typeInput').focus()).catch(()=>status('Fullscreen was blocked by the browser.'));
 }
 function showBears(){
-  const cats=activeCats(state?state.level:1);
-  const holder=$('bearCards');
-  if(!isRiver){
-    const icons={daily:'Aa',nature:'✦',world:'◎',science:'⚛'};
-    holder.innerHTML=bearNames.map(n=>`<div class="category-token ${cats.includes(n.id)?'':'locked'}"><span class="cat-icon" style="--cat:${colorMap[n.id]}">${icons[n.id]}</span><span><b>${catNames[n.id]}</b><small>${cats.includes(n.id)?'Words in this mission':'Unlocks in a later mission'}</small></span></div>`).join('');
-    return;
-  }
-  holder.innerHTML=bearNames.map((n,i)=>`<button type="button" class="bear ${state&&state.cat===n.id?'active':''} ${!cats.includes(n.id)?'locked':''}" data-bear="${n.id}" ${!cats.includes(n.id)?'disabled':''} aria-pressed="${state&&state.cat===n.id?'true':'false'}"><span class="bear-art">${bearArtwork(i)}</span><span><b>${n.title}</b><small>${n.role}</small></span><kbd>${i+1}</kbd></button>`).join('');
-  holder.querySelectorAll('[data-bear]').forEach(b=>b.addEventListener('click',()=>switchBear(b.dataset.bear)));
-  updateActiveBearArt();
+ const cats=activeCats(state?state.level:1);
+ const holder=$('bearCards');
+ if(!isRiver){
+ const icons={daily:'Aa',nature:'✦',world:'◎',science:'⚛'};
+ holder.innerHTML=bearNames.map(n=>`<div class="category-token ${cats.includes(n.id)?'':'locked'}"><span class="cat-icon" style="--cat:${colorMap[n.id]}">${icons[n.id]}</span><span><b>${catNames[n.id]}</b><small>${cats.includes(n.id)?'Words in this mission':'Unlocks in a later mission'}</small></span></div>`).join('');
+ return;
+ }
+ holder.innerHTML=bearNames.map((n,i)=>`<button type="button" class="bear ${state&&state.cat===n.id?'active':''} ${!cats.includes(n.id)?'locked':''}" data-bear="${n.id}" ${!cats.includes(n.id)?'disabled':''} aria-pressed="${state&&state.cat===n.id?'true':'false'}"><span class="bear-art">${bearArtwork(i)}</span><span><b>${n.title}</b><small>${n.role}</small></span><kbd>${i+1}</kbd></button>`).join('');
+ holder.querySelectorAll('[data-bear]').forEach(b=>b.addEventListener('click',()=>switchBear(b.dataset.bear)));
+ updateActiveBearArt();
 }
 function updateActiveBearArt(){
-  if(!isRiver)return;
-  const spot=$('activeBearArt');
-  if(spot){const current=bearNames.findIndex(b=>b.id===(state?.cat||'daily'));spot.innerHTML=bearArtwork(Math.max(0,current));}
+ if(!isRiver)return;
+ const spot=$('activeBearArt');
+ if(spot){const current=bearNames.findIndex(b=>b.id===(state?.cat||'daily'));spot.innerHTML=bearArtwork(Math.max(0,current));}
 }
 function switchBear(id){
-  if(!isRiver||!state||!running||paused||!activeCats(state.level).includes(id))return;
-  state.cat=id;
-  activeTarget=null;lastTyped='';$('typeInput').value='';$('typeInput').classList.remove('bad');
-  showBears();$('typeInput').focus();
-  status(`Now using ${bearNames.find(b=>b.id===id).title}. You can also type any visible food word and the correct bear will catch it.`);
+ if(!isRiver||!state||!running||paused||!activeCats(state.level).includes(id))return;
+ state.cat=id;
+ activeTarget=null;lastTyped='';$('typeInput').value='';$('typeInput').classList.remove('bad');
+ showBears();$('typeInput').focus();
+ status(`Now using ${bearNames.find(b=>b.id===id).title}. You can also type any visible food word and the correct bear will catch it.`);
 }
 function status(s){$('status').textContent=s}
 function refreshHud(){
-  if(!state)return;
-  $('score').textContent=state.score.toLocaleString();
-  $('collected').textContent=state.caught+' / '+(state.mode==='relaxed'?'∞':state.goal);
-  updateMissed();
-  $('levelNow').textContent=state.level+' / '+LEVELS.length;
-  $('progressFill').style.width=Math.min(100,100*state.caught/(state.mode==='relaxed'?LEVELS[state.level-1].goal:state.goal))+'%';
-  $('accuracy').textContent=(state.attempts?Math.max(0,Math.round(100*(state.attempts-state.errors)/state.attempts)):100)+'%';
-  $('wpm').textContent=Math.round((state.correctChars/5)/(Math.max(1,state.activeSec)/60));
+ if(!state)return;
+ $('score').textContent=state.score.toLocaleString();
+ $('collected').textContent=state.caught+' / '+(state.mode==='relaxed'?'∞':state.goal);
+ updateMissed();
+ $('levelNow').textContent=state.level+' / '+LEVELS.length;
+ $('progressFill').style.width=Math.min(100,100*state.caught/(state.mode==='relaxed'?LEVELS[state.level-1].goal:state.goal))+'%';
+ $('accuracy').textContent=(state.attempts?Math.max(0,Math.round(100*(state.attempts-state.errors)/state.attempts)):100)+'%';
+ $('wpm').textContent=Math.round((state.correctChars/5)/(Math.max(1,state.activeSec)/60));
 }
 function clearPlayfield(){
-  cancelAnimationFrame(raf);raf=0;
-  // Also remove stale targets and any temporarily animated hit effects.
-  $('objects').replaceChildren();
-  $('arena').querySelectorAll('.laser-beam,.impact-ring').forEach(el=>el.remove());
-  activeTarget=null;lastTyped='';
-  $('typeInput').value='';$('typeInput').classList.remove('bad');
-  $('endScreen').hidden=true;$('endScreen').classList.remove('active');
-  $('pause').textContent='Pause';
-  $('finishRun').hidden=true;
+ cancelAnimationFrame(raf);raf=0;
+ // Also remove stale targets and any temporarily animated hit effects.
+ $('objects').replaceChildren();
+ $('arena').querySelectorAll('.laser-beam,.impact-ring,.explosion').forEach(el=>el.remove());
+ activeTarget=null;lastTyped='';
+ $('typeInput').value='';$('typeInput').classList.remove('bad');
+ $('endScreen').hidden=true;$('endScreen').classList.remove('active');
+ $('pause').textContent='Pause';
+ $('finishRun').hidden=true;
 }
 function startGame(level){
-  clearPlayfield();
-  const grade=getGrade(),l=LEVELS[level-1];
-  if(!l)return;
-  const mode=$('modeSelect').value;
-  state={grade,level,mode,score:0,missed:0,caught:0,goal:mode==='relaxed'?Infinity:l.goal,cat:'daily',targets:[],attempts:0,errors:0,correctChars:0,activeSec:0,lastKeyAt:0,seen:new Set(),spawned:0,ended:false,scienceCatches:0};
-  running=true;paused=false;
-  $('typeInput').disabled=false;
-  $('startScreen').hidden=true;
-  $('arena').classList.toggle('fast',level>=4);
-  $('riverNumber').textContent=l.name;
-  $('arena').dataset.env=String(level);$('stageFrame').dataset.scene=String(level);configureModeUI();
-  lastFrame=performance.now();nextSpawn=lastFrame+l.spawn;
-  showBears();refreshHud();
-  status(isRiver?'Type any visible food word to catch it. Choose bears with Shift+1–4 if you like.':'Type any visible enemy word to destroy it. No Space or Enter required.');
-  spawn(); // A target appears immediately instead of requiring students to wait.
-  raf=requestAnimationFrame(tick);
-  $('typeInput').focus();
+ level=Math.min(Math.max(1,level),maxUnlocked());
+ clearPlayfield();
+ const grade=getGrade(),l=LEVELS[level-1];
+ if(!l)return;
+ const mode=$('modeSelect').value;
+ state={grade,level,mode,score:0,missed:0,caught:0,goal:mode==='relaxed'?Infinity:l.goal,cat:'daily',targets:[],attempts:0,errors:0,correctChars:0,activeSec:0,lastKeyAt:0,seen:new Set(),spawned:0,ended:false,scienceCatches:0};
+ running=true;paused=false;
+ $('typeInput').disabled=false;
+ $('startScreen').hidden=true;
+ $('arena').classList.toggle('fast',level>=4);
+ $('riverNumber').textContent=l.name;
+ $('arena').dataset.env=String(level);$('stageFrame').dataset.scene=String(level);configureModeUI();
+ lastFrame=performance.now();nextSpawn=lastFrame+l.spawn;
+ showBears();refreshHud();
+ status(isRiver?'Type any visible food word to catch it. Choose bears with Shift+1–4 if you like.':'Type any visible enemy word to destroy it. No Space or Enter required.');
+ spawn(); // A target appears immediately instead of requiring students to wait.
+ raf=requestAnimationFrame(tick);
+ $('typeInput').focus();startMusic();applyShip();
 }
 function positionTarget(t){if(t.el){t.el.style.left=(t.x*100)+'%';t.el.style.top=t.y+'px';}}
 function spawn(){
-  if(!state||state.ended||state.spawned>=state.goal+3)return;
-  const cats=activeCats(state.level),cat=random(cats),words=poolFor(state.grade,cat,state.level);
-  let choices=words.filter(w=>!state.targets.some(t=>t.word===w)&&!state.seen.has(cat+'|'+w));
-  if(!choices.length){state.seen.clear();choices=words.filter(w=>!state.targets.some(t=>t.word===w));}
-  if(!choices.length)return;
-  const word=random(choices);
-  state.seen.add(cat+'|'+word);
-  const x=.17+Math.random()*.66;
-  const t={id:state.spawned+1,word,cat,x,y:2,speed:LEVELS[state.level-1].speed*(.86+Math.random()*.23)*(isRiver&&cat==='nature'?.8:1),el:null};
-  const el=document.createElement('div');
-  el.className='target';el.style.setProperty('--item',colorMap[cat]);
-  el.innerHTML=`<span class="target-symbol">${isRiver?'🐟':'☄'}</span><strong>${word}</strong>`;
-  el.setAttribute('aria-label',word);
-  el.addEventListener('click',()=>{activeTarget=t;$('typeInput').focus();markTarget();});
-  t.el=el;state.targets.push(t);$('objects').appendChild(el);positionTarget(t);state.spawned++;
+ if(!state||state.ended||state.spawned>=state.goal+3)return;
+ const cats=activeCats(state.level),cat=random(cats),words=poolFor(state.grade,cat,state.level);
+ let choices=words.filter(w=>!state.targets.some(t=>t.word===w)&&!state.seen.has(cat+'|'+w));
+ if(!choices.length){state.seen.clear();choices=words.filter(w=>!state.targets.some(t=>t.word===w));}
+ if(!choices.length)return;
+ const word=random(choices);
+ state.seen.add(cat+'|'+word);
+ const x=.17+Math.random()*.66;
+ const t={id:state.spawned+1,word,cat,x,y:2,speed:LEVELS[state.level-1].speed*(.86+Math.random()*.23)*(isRiver&&cat==='nature'?.8:1),el:null};
+ const el=document.createElement('div');
+ el.className='target';el.style.setProperty('--item',colorMap[cat]);
+ el.innerHTML=`<span class="target-symbol">${isRiver?'🐟':'☄'}</span><strong>${word}</strong>`;
+ el.setAttribute('aria-label',word);
+ el.addEventListener('click',()=>{activeTarget=t;$('typeInput').focus();markTarget();});
+ t.el=el;state.targets.push(t);$('objects').appendChild(el);positionTarget(t);state.spawned++;
 }
 function markTarget(){if(!state)return;for(const t of state.targets)t.el?.classList.toggle('selected',t===activeTarget);}
 function removeTarget(t){
-  if(!state)return;
-  const idx=state.targets.indexOf(t);
-  if(idx>=0)state.targets.splice(idx,1);
-  t.el?.remove();
-  if(activeTarget===t){activeTarget=null;lastTyped='';$('typeInput').value='';$('typeInput').classList.remove('bad');}
+ if(!state)return;
+ const idx=state.targets.indexOf(t);
+ if(idx>=0)state.targets.splice(idx,1);
+ t.el?.remove();
+ if(activeTarget===t){activeTarget=null;lastTyped='';$('typeInput').value='';$('typeInput').classList.remove('bad');}
 }
 function endGame(won){
-  if(!state||state.ended)return;
-  running=false;paused=false;state.ended=true;
-  cancelAnimationFrame(raf);raf=0;
-  $('typeInput').disabled=true;
-  for(const t of [...state.targets])removeTarget(t);
-  const duration=Math.max(1,state.activeSec),net=Math.round((state.correctChars/5)/(duration/60));
-  const acc=state.attempts?Math.max(0,Math.round(100*(state.attempts-state.errors)/state.attempts)):100;
-  const key=GAME+'|'+state.grade;
-  const old=saved[key]||{bestScore:0,wins:0,totalWords:0,totalChars:0,topLevel:0};
-  old.bestScore=Math.max(old.bestScore,state.score);old.totalWords+=state.caught;
-  old.totalChars+=state.correctChars;old.wins+=won&&state.mode==='arcade'?1:0;
-  old.topLevel=Math.max(old.topLevel,won&&state.mode==='arcade'?state.level:state.level-1);
-  saved[key]=old;persist();
-  $('endTitle').textContent=state.mode==='relaxed'?'Practice run complete!':won?(isRiver?'Stream cleared!':'Mission complete!'):(isRiver?'River run ended':'Station breached');
-  $('endDescription').textContent=state.mode==='relaxed'?'Your practice words and score have been recorded on this device.':won?'You collected enough words to complete this stage.':'Replay the level to practice again, or choose another grade.';
-  $('finalScore').textContent=state.score.toLocaleString();$('finalAcc').textContent=acc+'%';$('finalWpm').textContent=net;
-  $('nextLevel').hidden=state.mode==='relaxed'||!won||state.level>=LEVELS.length;
-  configureModeUI();
-  $('endScreen').hidden=false;$('endScreen').classList.add('active');
-  status(won?'Level complete!':'Keep practicing. You can replay any level.');
-  refreshHud();refreshProfile();
+ if(!state||state.ended)return;
+ running=false;paused=false;state.ended=true;
+ cancelAnimationFrame(raf);raf=0;
+ $('typeInput').disabled=true;
+ for(const t of [...state.targets])removeTarget(t);
+ const duration=Math.max(1,state.activeSec),net=Math.round((state.correctChars/5)/(duration/60));
+ const acc=state.attempts?Math.max(0,Math.round(100*(state.attempts-state.errors)/state.attempts)):100;
+ const key=GAME+'|'+state.grade;
+ const old=saved[key]||{bestScore:0,wins:0,totalWords:0,totalChars:0,topLevel:0};
+ old.bestScore=Math.max(old.bestScore,state.score);old.totalWords+=state.caught;
+ old.totalChars+=state.correctChars;old.wins+=won&&state.mode==='arcade'?1:0;
+ old.topLevel=Math.max(old.topLevel,won&&state.mode==='arcade'?state.level:state.level-1);
+ saved[key]=old;persist();
+ stopMusic();playSound(won?'win':'fail');
+ $('endTitle').textContent=state.mode==='relaxed'?'Practice run complete!':won?(isRiver?'Stream cleared!':'Mission complete!'):(isRiver?'River run ended':'Station breached');
+ $('endDescription').textContent=state.mode==='relaxed'?'Your practice words and score have been recorded on this device.':won?'Mission cleared! The next stage is unlocked.':'Retry this mission to advance through the galaxy.';
+ $('finalScore').textContent=state.score.toLocaleString();$('finalAcc').textContent=acc+'%';$('finalWpm').textContent=net;
+ $('nextLevel').hidden=state.mode==='relaxed'||!won||state.level>=LEVELS.length;
+ configureModeUI();
+ $('endScreen').hidden=false;$('endScreen').classList.add('active');
+ status(won?'Level complete!':'Keep practicing. Retry this mission.');
+ refreshHud();refreshProfile();
 }
 function tick(now){
-  if(!running||!state)return;
-  const dt=Math.min(.07,(now-lastFrame)/1000);lastFrame=now;
-  if(!paused){
-    if(now>=nextSpawn&&state.spawned<state.goal+3){spawn();nextSpawn=now+LEVELS[state.level-1].spawn;}
-    const bound=$('arena').clientHeight-92;
-    for(const t of [...state.targets]){
-      t.y+=t.speed*dt;positionTarget(t);
-      if(t.y>bound){removeTarget(t);state.missed++;refreshHud();status(isRiver?'A fish swam away. Catch the next one!':'A meteor reached the station. Keep defending!');}
-    }
-    if(state.mode==='arcade'&&state.missed>=3){endGame(false);return;}
-    if(state.caught>=state.goal){endGame(true);return;}
-    if(state.mode==='arcade'&&state.spawned>=state.goal+3&&state.targets.length===0&&state.caught<state.goal){endGame(false);return;}
-  }
-  raf=requestAnimationFrame(tick);
+ if(!running||!state)return;
+ const dt=Math.min(.07,(now-lastFrame)/1000);lastFrame=now;
+ if(!paused){
+ if(now>=nextSpawn&&state.spawned<state.goal+3){spawn();nextSpawn=now+LEVELS[state.level-1].spawn;}
+ const bound=$('arena').clientHeight-92;
+ for(const t of [...state.targets]){
+ t.y+=t.speed*dt;positionTarget(t);
+ if(t.y>bound){removeTarget(t);state.missed++;refreshHud();status(isRiver?'A fish swam away. Catch the next one!':'A meteor reached the station. Keep defending!');}
+ }
+ if(state.mode==='arcade'&&state.missed>=3){endGame(false);return;}
+ if(state.caught>=state.goal){endGame(true);return;}
+ if(state.mode==='arcade'&&state.spawned>=state.goal+3&&state.targets.length===0&&state.caught<state.goal){endGame(false);return;}
+ }
+ raf=requestAnimationFrame(tick);
 }
 function findMatch(text){
-  if(!state||!text)return null;
-  const exact=state.targets.filter(t=>t.word===text).sort((a,b)=>b.y-a.y);
-  if(exact.length)return exact[0]; // Exact visible word always wins, even if another shares its prefix.
-  const prefix=state.targets.filter(t=>t.word.startsWith(text)).sort((a,b)=>b.y-a.y);
-  if(!prefix.length)return null;
-  if(activeTarget&&prefix.includes(activeTarget))return activeTarget;
-  if(isRiver){const chosen=prefix.find(t=>t.cat===state.cat);if(chosen)return chosen;}
-  return prefix[0];
+ if(!state||!text)return null;
+ const exact=state.targets.filter(t=>t.word===text).sort((a,b)=>b.y-a.y);
+ if(exact.length)return exact[0]; // Exact visible word always wins, even if another shares its prefix.
+ const prefix=state.targets.filter(t=>t.word.startsWith(text)).sort((a,b)=>b.y-a.y);
+ if(!prefix.length)return null;
+ if(activeTarget&&prefix.includes(activeTarget))return activeTarget;
+ if(isRiver){const chosen=prefix.find(t=>t.cat===state.cat);if(chosen)return chosen;}
+ return prefix[0];
 }
 function onTyped(event){
-  if(!state||!running||paused)return;
-  const inp=$('typeInput');
-  // All target words are one word: accidental spaces should never trap the player.
-  const typed=inp.value.toLowerCase().replace(/\s+/g,'');
-  if(inp.value!==typed)inp.value=typed;
-  const now=performance.now();
-  if(state.lastKeyAt&&now-state.lastKeyAt<1600)state.activeSec+=(now-state.lastKeyAt)/1000;
-  state.lastKeyAt=now;
-  if(!state.targets.length){inp.value='';lastTyped='';status('Watch for the next approaching word.');return;}
-  const change=typed.length-lastTyped.length;
-  if(change>0){state.attempts+=change;}
-  // Recompute the target after EVERY keystroke. Never lock into a wrong choice.
-  activeTarget=findMatch(typed);
-  const valid=Boolean(typed&&activeTarget);
-  inp.classList.toggle('bad',Boolean(typed&&!valid));
-  if(change>0&&!valid)state.errors+=change;
-  markTarget();
-  if(valid&&change>0&&typed.startsWith(lastTyped)&&!isRiver)pulseAt(activeTarget);
-  if(valid&&typed===activeTarget.word){
-    const t=activeTarget;
-    state.caught++;state.correctChars+=t.word.length;
-    state.score+=applyCatchBonus(t,Math.max(50,100+state.level*15-Math.floor(t.y/16)));
-    if(isRiver&&state.cat!==t.cat){state.cat=t.cat;showBears();}
-    const burst=document.createElement('div');
-    burst.className='burst';burst.textContent=isRiver?'★ Food collected!':'✦ Target destroyed!';
-    burst.style.top=t.y+'px';burst.style.left=t.x*100+'%';$('objects').appendChild(burst);
-    // Automatically disposed on a restart via clearPlayfield too.
-    setTimeout(()=>burst.remove(),750);
-    removeTarget(t);activeTarget=null;inp.value='';lastTyped='';inp.classList.remove('bad');
-    status(isRiver?'Great catch! Your bear collected the food.':'Target destroyed! Keep defending.');
-    refreshHud();
-    if(state.caught>=state.goal)endGame(true);
-    return;
-  }
-  if(!typed){status('Choose a word and type it to catch the target.');}
-  else if(!valid){status('No visible word starts with that text. Press Backspace to correct.');}
-  else if(isRiver){
-    const catcher=bearNames.find(b=>b.id===activeTarget.cat)?.title||'Your bear';
-    status(`Target: ${activeTarget.word} · ${catcher} can collect it. Finish the word!`);
-  }else status(`Target locked: ${activeTarget.word}. Finish typing to destroy it!`);
-  lastTyped=typed;
-  refreshHud();
+ if(!state||!running||paused)return;
+ const inp=$('typeInput');
+ // All target words are one word: accidental spaces should never trap the player.
+ const typed=inp.value.toLowerCase().replace(/\s+/g,'');
+ if(inp.value!==typed)inp.value=typed;
+ const now=performance.now();
+ if(state.lastKeyAt&&now-state.lastKeyAt<1600)state.activeSec+=(now-state.lastKeyAt)/1000;
+ state.lastKeyAt=now;
+ if(!state.targets.length){inp.value='';lastTyped='';status('Watch for the next approaching word.');return;}
+ const change=typed.length-lastTyped.length;
+ if(change>0){state.attempts+=change;}
+ // Recompute the target after EVERY keystroke. Never lock into a wrong choice.
+ activeTarget=findMatch(typed);
+ const valid=Boolean(typed&&activeTarget);
+ inp.classList.toggle('bad',Boolean(typed&&!valid));
+ if(change>0&&!valid)state.errors+=change;
+ markTarget();
+ if(valid&&change>0&&typed.startsWith(lastTyped)&&!isRiver)pulseAt(activeTarget);
+ if(valid&&typed===activeTarget.word){
+ const t=activeTarget;
+ state.caught++;state.correctChars+=t.word.length;
+ if(!isRiver){explosionAt(t);playSound('explode');}
+ state.score+=applyCatchBonus(t,Math.max(50,100+state.level*15-Math.floor(t.y/16)));
+ if(isRiver&&state.cat!==t.cat){state.cat=t.cat;showBears();}
+ const burst=document.createElement('div');
+ burst.className='burst';burst.textContent=isRiver?'★ Food collected!':'✦ Target destroyed!';
+ burst.style.top=t.y+'px';burst.style.left=t.x*100+'%';$('objects').appendChild(burst);
+ // Automatically disposed on a restart via clearPlayfield too.
+ setTimeout(()=>burst.remove(),750);
+ removeTarget(t);activeTarget=null;inp.value='';lastTyped='';inp.classList.remove('bad');
+ status(isRiver?'Great catch! Your bear collected the food.':'Target destroyed! Keep defending.');
+ refreshHud();
+ if(state.caught>=state.goal)endGame(true);
+ return;
+ }
+ if(!typed){status('Choose a word and type it to catch the target.');}
+ else if(!valid){status('No visible word starts with that text. Press Backspace to correct.');}
+ else if(isRiver){
+ const catcher=bearNames.find(b=>b.id===activeTarget.cat)?.title||'Your bear';
+ status(`Target: ${activeTarget.word} · ${catcher} can collect it. Finish the word!`);
+ }else status(`Target locked: ${activeTarget.word}. Finish typing to destroy it!`);
+ lastTyped=typed;
+ refreshHud();
 }
 function refreshProfile(){const grade=getGrade();const rec=saved[GAME+'|'+grade]||{};
-  $('bestScore').textContent=(rec.bestScore||0).toLocaleString();
-  $('bestLevel').textContent=(rec.topLevel||0)+' / '+LEVELS.length;
-  $('totalWords').textContent=(rec.totalWords||0).toLocaleString();
+ $('bestScore').textContent=(rec.bestScore||0).toLocaleString();
+ $('bestLevel').textContent=(rec.topLevel||0)+' / '+LEVELS.length;
+ $('totalWords').textContent=(rec.totalWords||0).toLocaleString();
 }
+function maxUnlocked(){const rec=saved[GAME+'|'+getGrade()]||{};return Math.max(1,Math.min(LEVELS.length,(rec.topLevel||0)+1));}
 function loadLevels(){
-  $('levelGrid').innerHTML=LEVELS.map((l,i)=>`<button type="button" class="level" data-level="${i+1}"><span class="num">${String(i+1).padStart(2,'0')}</span><span><strong>${l.name}</strong><small>${l.goal} words · ${l.cats} ${isRiver?'bear specialties':'word categories'}</small></span><span class="arrow">→</span></button>`).join('');
-  document.querySelectorAll('[data-level]').forEach(b=>b.addEventListener('click',()=>startGame(Number(b.dataset.level))));
-  refreshProfile();
+ const next=maxUnlocked(),l=LEVELS[next-1];
+ $('entryTitle').textContent=`Level ${next} · ${l.name}`;
+ $('entryDescription').textContent=next===1?'Begin at Level 1. Each successful mission unlocks the next.':`You have cleared ${next-1} of ${LEVELS.length} missions. Continue your journey!`;
+ $('startMission').textContent=`▶ ${next===1?'Start':'Continue'} Level ${next}`;
+ $('missionTrack').innerHTML=LEVELS.map((v,i)=>`<span title="${v.name}" class="${i+1<next?'done':i+1===next?'current':''}">${i+1}</span>`).join('');
+ refreshProfile();refreshCosmetics();
 }
 function backToLevels(){
-  running=false;paused=false;clearPlayfield();
-  $('startScreen').hidden=false;$('typeInput').disabled=true;
-  state=null;
-  $('riverNumber').textContent='Choose a '+(isRiver?'stream':'mission')+' above';
-  $('score').textContent='0';$('collected').textContent='0 / 0';$('missed').textContent='0 / 3';
-  $('accuracy').textContent='100%';$('wpm').textContent='0';$('progressFill').style.width='0%';
-  status('Choose a level to begin.');configureModeUI();showBears();loadLevels();
+ running=false;paused=false;clearPlayfield();stopMusic();
+ $('startScreen').hidden=false;$('typeInput').disabled=true;
+ state=null;$('riverNumber').textContent='Press Start Mission above';
+ $('score').textContent='0';$('collected').textContent='0 / 0';$('missed').textContent='0 / 3';
+ $('accuracy').textContent='100%';$('wpm').textContent='0';$('progressFill').style.width='0%';
+ status('Press Start Mission to begin.');configureModeUI();showBears();loadLevels();
 }
+
+const COSKEY='nacheshub_space_cosmetics_v5';
+let cosmetics={ship:'scout',laser:'cyan',music:'on',effects:'on'};
+try{cosmetics={...cosmetics,...JSON.parse(localStorage.getItem(COSKEY)||'{}')}}catch(e){}
+const LASERS={cyan:'#61dfff',red:'#ff6868',green:'#69ff98',purple:'#ba86ff',gold:'#ffca64',rainbow:'rainbow'};
+function laserColor(){const c=LASERS[cosmetics.laser]||LASERS.cyan;return c==='rainbow'?`hsl(${Math.floor(performance.now()/7)%360} 100% 70%)`:c;}
+function refreshCosmetics(){const unlock=maxUnlocked();const sh=$('shipSelect');if(!sh)return;sh.options[1].disabled=unlock<4;sh.options[2].disabled=unlock<8;$('laserSelect').options[5].disabled=unlock<12;if((cosmetics.ship==='interceptor'&&unlock<4)||(cosmetics.ship==='guardian'&&unlock<8)){cosmetics.ship='scout';sh.value='scout'}if(cosmetics.laser==='rainbow'&&unlock<12){cosmetics.laser='cyan';$('laserSelect').value='cyan'}applyShip();}
+function applyShip(){const ship=document.querySelector('.arcade-ship');if(ship)ship.dataset.ship=cosmetics.ship;}
+function setupCosmetics(){for(const [id,key] of [['shipSelect','ship'],['laserSelect','laser'],['musicSelect','music'],['effectsSelect','effects']]){const el=$(id);el.value=cosmetics[key];el.addEventListener('change',()=>{cosmetics[key]=el.value;try{localStorage.setItem(COSKEY,JSON.stringify(cosmetics))}catch(e){};if(key==='ship')applyShip();if(key==='music'){stopMusic();if(cosmetics.music==='on'&&running&&!paused)startMusic();}})}refreshCosmetics();}
+let audioCtx=null,musicInterval=null,musicStep=0;
+function audio(){if(!audioCtx){try{audioCtx=new(window.AudioContext||window.webkitAudioContext)()}catch(e){}}if(audioCtx?.state==='suspended')audioCtx.resume().catch(()=>{});return audioCtx;}
+function tone(freq,duration=0.08,type='sine',volume=.045,delay=0){const ctx=audio();if(!ctx)return;const t=ctx.currentTime+delay,o=ctx.createOscillator(),gain=ctx.createGain();o.type=type;o.frequency.setValueAtTime(Math.max(35,freq),t);gain.gain.setValueAtTime(.0001,t);gain.gain.exponentialRampToValueAtTime(Math.max(.0002,volume),t+.012);gain.gain.exponentialRampToValueAtTime(.0001,t+duration);o.connect(gain);gain.connect(ctx.destination);o.start(t);o.stop(t+duration+.025);}
+function playSound(kind){if(cosmetics.effects!=='on')return;if(kind==='laser'){tone(650,.06,'sawtooth',.018);tone(980,.04,'sine',.02,.025);}else if(kind==='explode'){tone(160,.2,'sawtooth',.065);tone(85,.34,'triangle',.06,.035);tone(500,.09,'square',.013);}else if(kind==='win'){[523,659,784,1046].forEach((f,i)=>tone(f,.18,'triangle',.06,i*.12));}else if(kind==='fail'){[330,240,170].forEach((f,i)=>tone(f,.2,'triangle',.04,i*.14));}}
+function startMusic(){if(cosmetics.music!=='on'||musicInterval||!running||paused)return;audio();const notes=[110,164.81,220,164.81,130.81,196,261.63,196];musicInterval=setInterval(()=>{if(!running||paused)return;const n=notes[musicStep%notes.length];tone(n,.19,'triangle',.014);if(musicStep%4===0)tone(n/2,.32,'sine',.012);musicStep++;},290);}
+function stopMusic(){if(musicInterval!==null){clearInterval(musicInterval);musicInterval=null;}}
+function explosionAt(t){const arena=$('arena');if(!arena)return;const el=document.createElement('div');el.className='explosion';el.style.left=(t.x*100)+'%';el.style.top=(t.y+24)+'px';arena.append(el);setTimeout(()=>el.remove(),540);}
+
 function setUp(){
-  for(let g=1;g<=12;g++)$('gradeSelect').add(new Option('Grade '+g,String(g)));
-  $('gradeSelect').value='5';
-  $('gradeSelect').addEventListener('change',()=>{backToLevels();});
-  $('typeInput').addEventListener('paste',e=>{e.preventDefault();status('Please type words using your keyboard rather than pasting.');});
-  $('typeInput').addEventListener('input',onTyped);
-  document.addEventListener('keydown',e=>{
-    if(!running||paused)return;
-    if(isRiver&&e.shiftKey&&/^Digit[1-4]$/.test(e.code)){
-      switchBear(bearNames[Number(e.code.slice(-1))-1].id);e.preventDefault();return;
-    }
-    if(e.key==='Escape'){togglePause();e.preventDefault();return;}
-    if(document.activeElement!==$('typeInput')&&e.key.length===1&&!e.altKey&&!e.ctrlKey&&!e.metaKey){$('typeInput').focus();}
-  });
-  $('pause').addEventListener('click',togglePause);
-  $('fullscreen').addEventListener('click',toggleFullscreen);document.addEventListener('fullscreenchange',setFullscreenLabel);
-  $('finishRun').addEventListener('click',()=>{if(state&&running&&state.mode==='relaxed')endGame(true);});
-  $('modeSelect').addEventListener('change',backToLevels);
-  $('restart').addEventListener('click',()=>{if(state)startGame(state.level);});
-  $('back').addEventListener('click',backToLevels);
-  $('retry').addEventListener('click',()=>{if(state)startGame(state.level);});
-  $('nextLevel').addEventListener('click',()=>{if(state)startGame(Math.min(LEVELS.length,state.level+1));});
-  $('homeEnd').addEventListener('click',backToLevels);
-  $('help').addEventListener('click',()=>$('helpDialog').showModal());
-  $('closeHelp').addEventListener('click',()=>$('helpDialog').close());
-  $('typeInput').disabled=true;configureModeUI();showBears();loadLevels();
+ for(let g=1;g<=12;g++)$('gradeSelect').add(new Option('Grade '+g,String(g)));
+ $('gradeSelect').value='5';
+ $('gradeSelect').addEventListener('change',()=>{backToLevels();});
+ $('startMission').addEventListener('click',()=>startGame(maxUnlocked()));
+ setupCosmetics();
+ $('typeInput').addEventListener('paste',e=>{e.preventDefault();status('Please type words using your keyboard rather than pasting.');});
+ $('typeInput').addEventListener('input',onTyped);
+ document.addEventListener('keydown',e=>{
+ if(!running||paused)return;
+ if(isRiver&&e.shiftKey&&/^Digit[1-4]$/.test(e.code)){
+ switchBear(bearNames[Number(e.code.slice(-1))-1].id);e.preventDefault();return;
+ }
+ if(e.key==='Escape'){togglePause();e.preventDefault();return;}
+ if(document.activeElement!==$('typeInput')&&e.key.length===1&&!e.altKey&&!e.ctrlKey&&!e.metaKey){$('typeInput').focus();}
+ });
+ $('pause').addEventListener('click',togglePause);
+ $('fullscreen').addEventListener('click',toggleFullscreen);document.addEventListener('fullscreenchange',setFullscreenLabel);
+ $('finishRun').addEventListener('click',()=>{if(state&&running&&state.mode==='relaxed')endGame(true);});
+ $('modeSelect').addEventListener('change',backToLevels);
+ $('restart').addEventListener('click',()=>{if(state)startGame(state.level);});
+ $('back').addEventListener('click',backToLevels);
+ $('retry').addEventListener('click',()=>{if(state)startGame(state.level);});
+ $('nextLevel').addEventListener('click',()=>{if(state)startGame(Math.min(maxUnlocked(),state.level+1));});
+ $('homeEnd').addEventListener('click',backToLevels);
+ $('help').addEventListener('click',()=>$('helpDialog').showModal());
+ $('closeHelp').addEventListener('click',()=>$('helpDialog').close());
+ $('typeInput').disabled=true;configureModeUI();showBears();loadLevels();
 }
 function togglePause(){
-  if(!running)return;
-  paused=!paused;lastFrame=performance.now();
-  $('pause').textContent=paused?'Resume':'Pause';
-  $('typeInput').disabled=paused;
-  status(paused?'Paused. Your round is safe.':'Resumed. Keep typing!');
-  if(!paused)$('typeInput').focus();
+ if(!running)return;
+ paused=!paused;lastFrame=performance.now();
+ $('pause').textContent=paused?'Resume':'Pause';
+ $('typeInput').disabled=paused;
+ status(paused?'Paused. Your round is safe.':'Resumed. Keep typing!');
+ if(!paused){$('typeInput').focus();startMusic();}else stopMusic();
 }
 setUp();
+
 
 </script>
 </body></html>

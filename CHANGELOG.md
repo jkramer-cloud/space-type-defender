@@ -1,7 +1,14 @@
 # Changelog
 
-## v6.1 — October 30, 2026
-- Restore the v6 feature set over the older published version (ship selection, lasers, missiles, nova bombs, space missions).
-- Expand the Ship Hangar by default, making customization visible immediately.
-- Add an on-screen control reminder for missile and bomb shortcuts.
-- Retain the pre-existing local high-score storage key.
+## v6.2 — Mission Control Over Playfield
+
+- Rebuilt mission selection as a cinematic overlay over the existing starfield.
+- Added six distinct planet-styled mission cards, with descriptive challenge details and cleared-state markings.
+- Moved grade and Arcade/Relaxed selection into Mission Control.
+- Added quick-access Ship Hangar and return-to-missions controls.
+- Shortened the introductory section and added an Open Mission Control shortcut.
+- Preserved v6.1 spacecraft, laser, missile, and nova-bomb systems.
+
+## v6.1 — Restored Weapons and Hangar
+
+- Restored eight ships, six laser effects, precision missiles, and nova bombs.
